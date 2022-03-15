@@ -21,9 +21,9 @@ sort_versions() {
 }
 
 list_all_versions() {
-  echo "v8.3.4-darwin-amd64"
-  echo "v7.3.17-darwin-amd64"
-  echo "v6.2.31-darwin-amd64"
+  echo "v8.3.4"
+  echo "v7.3.17"
+  echo "v6.2.31"
 }
 
 detect_os() {
