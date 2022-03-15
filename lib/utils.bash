@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-REPO="https://get.gravitational.com/"
+REPO="https://get.gravitational.com"
 TOOL_NAME="teleport-ent"
 TOOL_TEST="tsh version"
 
