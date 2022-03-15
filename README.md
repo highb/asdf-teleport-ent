@@ -44,10 +44,22 @@ asdf global teleport-ent latest
 
 # Now teleport-ent commands are available
 tsh version
+tctl version
+teleport version
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
+
+# Why?
+
+When testing out version upgrades on Teleport, I frequently found myself jumping between
+tsh/tctl versions and decided that I didn't want to manage a bunch of symlinks manually
+so I made an asdf plugin.
+
+*I do not work for Gravitational* so this does not come with any support guarantees, but
+please feel free to open a PR if you find a version that you need is missing or you need
+some functionality added.
 
 # Contributing
 
