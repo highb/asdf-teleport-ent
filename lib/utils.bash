@@ -21,25 +21,25 @@ sort_versions() {
 }
 
 list_all_versions() {
-  echo "v9.0.0"
-  echo "v8.3.4"
-  echo "v8.3.3"
-  echo "v8.3.2"
-  echo "v8.3.1"
-  echo "v8.3.0"
-  echo "v8.2.0"
-  echo "v8.1.5"
-  echo "v8.1.4"
-  echo "v7.3.17"
-  echo "v7.3.16"
-  echo "v7.3.15"
-  echo "v7.3.14"
-  echo "v6.2.31"
-  echo "v6.2.30"
-  echo "v6.2.29"
-  echo "v6.2.28"
-  echo "v5.2.5"
-  echo "v4.4.12"
+  echo "9.0.0"
+  echo "8.3.4"
+  echo "8.3.3"
+  echo "8.3.2"
+  echo "8.3.1"
+  echo "8.3.0"
+  echo "8.2.0"
+  echo "8.1.5"
+  echo "8.1.4"
+  echo "7.3.17"
+  echo "7.3.16"
+  echo "7.3.15"
+  echo "7.3.14"
+  echo "6.2.31"
+  echo "6.2.30"
+  echo "6.2.29"
+  echo "6.2.28"
+  echo "5.2.5"
+  echo "4.4.12"
 }
 
 detect_os() {
@@ -89,7 +89,7 @@ download_release() {
   filename="$2"
   os=$(detect_os)
   arch=$(detect_arch "$os")
-  url="$REPO/teleport-ent-${version}-${os}-${arch}-bin.tar.gz"
+  url="$REPO/teleport-ent-v${version}-${os}-${arch}-bin.tar.gz"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
