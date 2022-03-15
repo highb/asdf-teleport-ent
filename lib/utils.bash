@@ -44,24 +44,24 @@ list_all_versions() {
 
 detect_os() {
   if [ "$OS" = "unknown" ]; then
-    UNAME="$( command -v uname)"
+    UNAME="$(command -v uname)"
 
-    case $( "${UNAME}" | tr '[:upper:]' '[:lower:]') in
-      linux*)
-        echo 'linux'
-        ;;
-      darwin*)
-        echo 'darwin'
-        ;;
-      msys*|cygwin*|mingw*)
-        echo 'windows'
-        ;;
-      nt|win*)
-        echo 'windows'
-        ;;
-      *)
-        fail "Unknown operating system. Please provide the operating system version by setting \$OS."
-        ;;
+    case $("${UNAME}" | tr '[:upper:]' '[:lower:]') in
+    linux*)
+      echo 'linux'
+      ;;
+    darwin*)
+      echo 'darwin'
+      ;;
+    msys* | cygwin* | mingw*)
+      echo 'windows'
+      ;;
+    nt | win*)
+      echo 'windows'
+      ;;
+    *)
+      fail "Unknown operating system. Please provide the operating system version by setting \$OS."
+      ;;
     esac
   else
     echo "$OS"
