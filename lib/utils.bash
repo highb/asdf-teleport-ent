@@ -72,7 +72,7 @@ download_release() {
   version="$1"
   filename="$2"
   os=$(detect_os)
-  arch=$(detect_arch "$OS")
+  arch=$(detect_arch "$os")
   url="$REPO/teleport-ent-${version}-${os}-${arch}-bin.tar.gz"
 
   echo "* Downloading $TOOL_NAME release $version..."
