@@ -25,7 +25,7 @@ list_all_versions() {
 }
 
 list_bin_paths() {
-  echo "tsh tctl teleport"
+  echo "."
 }
 
 download_release() {
