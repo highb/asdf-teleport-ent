@@ -24,10 +24,6 @@ list_all_versions() {
   echo "v6.2.31-darwin-amd64"
 }
 
-list_bin_paths() {
-  echo "."
-}
-
 download_release() {
   local version filename url
   version="$1"
@@ -51,11 +47,15 @@ install_version() {
   (
     mkdir -p "$install_path"
     cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
+    mkdir -p "$install_path"/bin
+    mv "$install_path"/tsh "$install_path"/bin/tsh
+    mv "$install_path"/tctl "$install_path"/bin/tctl
+    mv "$install_path"/teleport "$install_path"/bin/teleport
 
     # TODO: Asert teleport-ent executable exists.
     local tool_cmd
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
-    test -x "$install_path/$tool_cmd" || fail "Expected $install_path/$tool_cmd to be executable."
+    test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
     echo "$TOOL_NAME $version installation was successful!"
   ) || (
