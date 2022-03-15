@@ -24,6 +24,10 @@ list_all_versions() {
   echo "v6.2.31-darwin-amd64"
 }
 
+list_bin_paths() {
+  echo "tsh tctl teleport"
+}
+
 download_release() {
   local version filename url
   version="$1"
