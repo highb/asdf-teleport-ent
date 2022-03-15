@@ -5,6 +5,8 @@ set -euo pipefail
 REPO="https://get.gravitational.com"
 TOOL_NAME="teleport-ent"
 TOOL_TEST="tsh version"
+OS="${OS:-unknown}"
+ARCH="${ARCH:-unknown}"
 
 fail() {
   echo -e "asdf-$TOOL_NAME: $*"
@@ -24,12 +26,54 @@ list_all_versions() {
   echo "v6.2.31-darwin-amd64"
 }
 
+detect_os() {
+  if [ "$OS" = "unknown" ]; then
+    UNAME="$( command -v uname)"
+
+    case $( "${UNAME}" | tr '[:upper:]' '[:lower:]') in
+      linux*)
+        echo 'linux'
+        ;;
+      darwin*)
+        echo 'darwin'
+        ;;
+      msys*|cygwin*|mingw*)
+        echo 'windows'
+        ;;
+      nt|win*)
+        echo 'windows'
+        ;;
+      *)
+        fail "Unknown operating system. Please provide the operating system version by setting \$OS."
+        ;;
+    esac
+  else
+    echo "$OS"
+  fi
+}
+
+detect_arch() {
+  # TODO Figure out arm, arm64, i386, etc
+  if [ "$ARCH" = "unknown" ]; then
+    if [ "$1" = "darwin" ]; then
+      echo 'amd64'
+    elif [ "$1" = "linux" ]; then
+      echo 'amd64'
+    else
+      fail "Unknown architecture. Please provide the architecture by setting \$ARCH."
+    fi
+  else
+    echo "$ARCH"
+  fi
+}
+
 download_release() {
   local version filename url
   version="$1"
   filename="$2"
-
-  url="$REPO/teleport-ent-${version}-bin.tar.gz"
+  os=$(detect_os)
+  arch=$(detect_arch "$OS")
+  url="$REPO/teleport-ent-${version}-${os}-${arch}-bin.tar.gz"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
