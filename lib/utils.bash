@@ -21,6 +21,7 @@ sort_versions() {
 }
 
 list_all_versions() {
+  echo "9.0.4"
   echo "9.0.0"
   echo "8.3.4"
   echo "8.3.3"
