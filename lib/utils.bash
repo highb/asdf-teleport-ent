@@ -21,6 +21,7 @@ sort_versions() {
 }
 
 list_all_versions() {
+  echo "9.0.4"
   echo "9.0.0"
   echo "8.3.4"
   echo "8.3.3"
@@ -111,6 +112,8 @@ install_version() {
     mv "$install_path"/tsh "$install_path"/bin/tsh
     mv "$install_path"/tctl "$install_path"/bin/tctl
     mv "$install_path"/teleport "$install_path"/bin/teleport
+    # Machine ID is available starting from the Teleport 9.0.0 release. So tbot not exist in previous releases
+    [[ -f "$install_path"/tbot ]] && mv "$install_path"/tbot "$install_path"/bin/tbot
 
     # TODO: Asert teleport-ent executable exists.
     local tool_cmd
