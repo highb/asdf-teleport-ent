@@ -21,6 +21,12 @@ sort_versions() {
 }
 
 list_all_versions() {
+  echo "9.2.1"
+  echo "9.2.0"
+  echo "9.1.3"
+  echo "9.1.2"
+  echo "9.1.1"
+  echo "9.1.0"
   echo "9.0.4"
   echo "9.0.0"
   echo "8.3.4"
