@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-REPO="https://get.gravitational.com"
+REPO="https://cdn.teleport.dev"
 TOOL_NAME="teleport-ent"
 TOOL_TEST="tsh version"
 OS="${OS:-unknown}"
@@ -21,6 +21,12 @@ sort_versions() {
 }
 
 list_all_versions() {
+  echo "10.3.3"
+  echo "10.3.2"
+  echo "10.3.1"
+  echo "10.3.0"
+  echo "10.2.6"
+  echo "10.2.5"
   echo "10.2.4"
   echo "10.2.2"
   echo "10.2.1"
