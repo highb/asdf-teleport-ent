@@ -100,6 +100,29 @@ list_all_versions() {
   echo "10.3.1"
   echo "10.3.2"
   echo "10.3.3"
+  echo "10.3.13"
+
+  echo "11.3.11"
+
+  echo "12.0.0"
+  echo "12.0.1"
+  echo "12.0.2"
+  echo "12.0.3"
+  echo "12.0.4"
+  echo "12.0.5"
+
+  echo "12.1.0"
+  echo "12.1.1"
+  echo "12.1.2"
+  echo "12.1.3"
+  echo "12.1.4"
+  echo "12.1.5"
+
+  echo "12.2.0"
+  echo "12.2.1"
+  echo "12.2.2"
+  echo "12.2.3"
+  echo "12.2.4"
 }
 
 detect_os() {
