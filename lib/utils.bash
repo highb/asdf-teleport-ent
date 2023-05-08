@@ -123,6 +123,11 @@ list_all_versions() {
   echo "12.2.2"
   echo "12.2.3"
   echo "12.2.4"
+  echo "12.2.5"
+
+  echo "12.3.0"
+  echo "12.3.1"
+  echo "12.3.2"
 }
 
 detect_os() {
