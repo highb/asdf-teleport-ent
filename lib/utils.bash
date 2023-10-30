@@ -132,7 +132,7 @@ list_all_versions() {
 
 detect_os() {
   if [ "$OS" = "unknown" ]; then
-    UNAME="$(uname)"
+    UNAME="$(command -v uname)"
 
     case $("${UNAME}" | tr '[:upper:]' '[:lower:]') in
     linux*)
