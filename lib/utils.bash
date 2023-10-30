@@ -163,9 +163,16 @@ detect_arch() {
     if [ $? != 0 ]; then
       fail "Unknown architecture. Please provide the architecture by setting \$ARCH."
     fi
-  fi
 
-  echo "$ARCH"
+    # Translate to Teleport arch names
+    if [ "${ARCH}" == "x86_64" ]; then
+      echo "amd64"
+    else
+      echo "$ARCH"
+    fi
+  else
+    echo "$ARCH"
+  fi
 }
 
 download_release() {
