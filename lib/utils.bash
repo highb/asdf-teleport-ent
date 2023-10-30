@@ -159,16 +159,13 @@ detect_os() {
 detect_arch() {
   # TODO Figure out arm, arm64, i386, etc
   if [ "$ARCH" = "unknown" ]; then
-    if [ "$1" = "darwin" ]; then
-      echo 'amd64'
-    elif [ "$1" = "linux" ]; then
-      echo 'amd64'
-    else
+    ARCH="$(command -v uname -m)"
+    if [ $? != 0 ]; then
       fail "Unknown architecture. Please provide the architecture by setting \$ARCH."
     fi
-  else
-    echo "$ARCH"
   fi
+
+  echo "$ARCH"
 }
 
 download_release() {
