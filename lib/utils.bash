@@ -132,7 +132,7 @@ list_all_versions() {
 
 detect_os() {
   if [ "$OS" = "unknown" ]; then
-    UNAME="$(command -v uname)"
+    UNAME="$(uname)"
 
     case $("${UNAME}" | tr '[:upper:]' '[:lower:]') in
     linux*)
@@ -159,7 +159,7 @@ detect_os() {
 detect_arch() {
   # TODO Figure out arm, arm64, i386, etc
   if [ "$ARCH" = "unknown" ]; then
-    ARCH="$(command -v uname -m)"
+    ARCH="$(uname -m)"
     if [ $? != 0 ]; then
       fail "Unknown architecture. Please provide the architecture by setting \$ARCH."
     fi
