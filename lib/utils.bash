@@ -161,14 +161,22 @@ detect_arch() {
   if [ "$ARCH" = "unknown" ]; then
     ARCH="$(uname -m)"
     if [ $? != 0 ]; then
-      fail "Unknown architecture. Please provide the architecture by setting \$ARCH."
+      fail "\$ARCH not provided and could not call uname -m."
     fi
 
-    # Translate to Teleport arch names
+    # Translate to Teleport arch names/explicit list of supported arch
     if [ "${ARCH}" == "x86_64" ]; then
       echo "amd64"
-    else
+    elif [ "${ARCH}" == "amd64" ]; then
       echo "$ARCH"
+    elif [ "${ARCH}" == "arm64" ]; then
+      echo "$ARCH"
+    elif [ "${ARCH}" == "i386" ]; then
+      echo "$ARCH"
+    elif [ "${ARCH}" == "armv7" ]; then
+      echo "$ARCH"
+    else
+      fail "Unknown architecture. Please provide the architecture by setting \$ARCH."
     fi
   else
     echo "$ARCH"
