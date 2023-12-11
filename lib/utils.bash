@@ -2,6 +2,7 @@
 
 set -euo pipefail
 
+GH_REPO="https://github.com/gravitational/teleport/"
 REPO="https://cdn.teleport.dev"
 TOOL_NAME="teleport-ent"
 TOOL_TEST="tsh version"
@@ -15,119 +16,25 @@ fail() {
 
 curl_opts=(-fsSL)
 
+if [ -n "${GITHUB_API_TOKEN:-}" ]; then
+  curl_opts=("${curl_opts[@]}" -H "Authorization: token $GITHUB_API_TOKEN")
+fi
+
+sort_versions() {
+  sed 'h; s/[+-]/./g; s/.p\([[:digit:]]\)/.z\1/; s/$/.z/; G; s/\n/ /' |
+    LC_ALL=C sort -t. -k 1,1 -k 2,2n -k 3,3n -k 4,4n -k 5,5n | awk '{print $2}'
+}
+
+list_github_tags() {
+  git ls-remote --tags --refs "$GH_REPO" |
+    grep -oE 'refs/tags/v[0-9]+.[0-9]+.[0-9]+$' |
+    cut -d/ -f3- |
+    sed 's/^v//' |
+    sort -V
+}
+
 list_all_versions() {
-  echo "4.4.12"
-  echo "5.2.5"
-  echo "6.2.28"
-  echo "6.2.29"
-  echo "6.2.30"
-  echo "6.2.31"
-
-  echo "7.3.14"
-  echo "7.3.15"
-  echo "7.3.16"
-  echo "7.3.17"
-  echo "7.3.18"
-  echo "7.3.19"
-  echo "7.3.20"
-  echo "7.3.21"
-  echo "7.3.23"
-  echo "7.3.25"
-
-  echo "8.1.4"
-  echo "8.1.5"
-  echo "8.2.0"
-  echo "8.3.0"
-  echo "8.3.1"
-  echo "8.3.2"
-  echo "8.3.3"
-  echo "8.3.4"
-  echo "8.3.5"
-  echo "8.3.6"
-  echo "8.3.7"
-  echo "8.3.8"
-  echo "8.3.9"
-  echo "8.3.10"
-  echo "8.3.11"
-  echo "8.3.12"
-  echo "8.3.14"
-  echo "8.3.15"
-  echo "8.3.16"
-  echo "8.3.17"
-  echo "8.3.18"
-
-  echo "9.0.0"
-  echo "9.0.2"
-  echo "9.0.3"
-  echo "9.0.4"
-  echo "9.1.0"
-  echo "9.1.1"
-  echo "9.1.2"
-  echo "9.1.3"
-  echo "9.2.0"
-  echo "9.2.1"
-  echo "9.2.3"
-  echo "9.2.4"
-  echo "9.3.0"
-  echo "9.3.2"
-  echo "9.3.4"
-  echo "9.3.5"
-  echo "9.3.6"
-  echo "9.3.7"
-  echo "9.3.9"
-  echo "9.3.10"
-  echo "9.3.12"
-  echo "9.3.13"
-  echo "9.3.14"
-  echo "9.3.18"
-  echo "9.3.20"
-
-  echo "10.0.0-alpha.2"
-  echo "10.0.0-rc.1"
-  echo "10.0.0"
-  echo "10.0.1"
-  echo "10.0.2"
-  echo "10.1.2"
-  echo "10.1.4"
-  echo "10.1.9"
-  echo "10.2.0"
-  echo "10.2.1"
-  echo "10.2.2"
-  echo "10.2.4"
-  echo "10.2.5"
-  echo "10.2.6"
-  echo "10.3.0"
-  echo "10.3.1"
-  echo "10.3.2"
-  echo "10.3.3"
-  echo "10.3.13"
-
-  echo "11.3.11"
-
-  echo "12.0.0"
-  echo "12.0.1"
-  echo "12.0.2"
-  echo "12.0.3"
-  echo "12.0.4"
-  echo "12.0.5"
-
-  echo "12.1.0"
-  echo "12.1.1"
-  echo "12.1.2"
-  echo "12.1.3"
-  echo "12.1.4"
-  echo "12.1.5"
-
-  echo "12.2.0"
-  echo "12.2.1"
-  echo "12.2.2"
-  echo "12.2.3"
-  echo "12.2.4"
-  echo "12.2.5"
-
-  echo "12.3.0"
-  echo "12.3.1"
-  echo "12.3.2"
+  list_github_tags
 }
 
 detect_os() {
