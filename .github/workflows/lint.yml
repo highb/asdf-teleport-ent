@@ -40,9 +40,8 @@ jobs:
       - name: Run shfmt
         run: scripts/shfmt.bash
 
-  commit-lint:
+  commit:
     runs-on: ubuntu-latest
-    name: "Lint commits with commitizen"
     if: github.event_name == 'pull_request'
     steps:
       - name: Check out
