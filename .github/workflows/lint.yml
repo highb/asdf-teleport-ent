@@ -40,10 +40,18 @@ jobs:
       - name: Run shfmt
         run: scripts/shfmt.bash
 
-  pr-title:
-    name: Validate PR title
+  commit-lint:
     runs-on: ubuntu-latest
+    name: "Lint commits with commitizen"
+    if: github.event_name == 'pull_request'
     steps:
-      - uses: amannn/action-semantic-pull-request@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check out
+        uses: actions/checkout@v3
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          fetch-depth: 0
+      - name: Lint commits
+        shell: bash
+        run: |
+          pip install --user -U Commitizen
+          cz check --rev-range ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
