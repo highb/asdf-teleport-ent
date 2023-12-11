@@ -51,7 +51,4 @@ jobs:
           token: "${{ secrets.GITHUB_TOKEN }}"
           fetch-depth: 0
       - name: Lint commits
-        shell: bash
-        run: |
-          pip install --user -U Commitizen
-          cz check --rev-range ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
+        uses: highb/commitizen-check-action@main
