@@ -40,17 +40,17 @@ asdf list-all teleport-ent
 asdf install teleport-ent latest
 
 # Install specific version
-asdf install teleport-ent 8.3.4
+asdf install teleport-ent 14.2.2
 
 # Set a version globally (on your ~/.tool-versions file)
 asdf global teleport-ent latest
 
 # Set a version locally for the current directory and all sub-directories
 # This will also create a .tool-versions file which can be checked in to source control.
-asdf local teleport-ent 8.3.4
+asdf local teleport-ent 14.2.2
 
 # Set a version for the current shell
-asdf shell teleport-ent 8.3.4
+asdf shell teleport-ent 14.2.2
 
 # Now teleport-ent commands are available
 tsh version
