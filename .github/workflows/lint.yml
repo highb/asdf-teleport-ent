@@ -5,6 +5,12 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
+
+permissions:
+  pull-requests: read
+  contents: read
 
 jobs:
   shellcheck:
@@ -34,3 +40,14 @@ jobs:
       - name: Run shfmt
         run: scripts/shfmt.bash
 
+  commit:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          fetch-depth: 0
+      - name: Lint commits
+        uses: highb/commitizen-check-action@main
