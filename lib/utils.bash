@@ -26,16 +26,11 @@ sort_versions() {
 }
 
 list_github_tags() {
-  if [ -n "${GITHUB_API_TOKEN:-}" ]; then
-    git ls-remote --tags --refs "$GH_REPO" |
-      grep -oE 'refs/tags/v[0-9]+.[0-9]+.[0-9]+$' |
-      cut -d/ -f3- |
-      sed 's/^v//' |
-      sort -V
-  else
-    # If we can't use the GitHub API, we'll just hardcode the latest version
-    echo "14.2.2"
-  fi
+  git ls-remote --tags --refs "$GH_REPO" |
+    grep -oE 'refs/tags/v[0-9]+.[0-9]+.[0-9]+$' |
+    cut -d/ -f3- |
+    sed 's/^v//' |
+    sort -V
 }
 
 list_all_versions() {
