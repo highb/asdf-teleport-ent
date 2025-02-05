@@ -102,6 +102,21 @@ download_release() {
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 
+install_client_binary() {
+  local install_path="$1"
+  local binary="$2"
+
+  local binary_path="$install_path/$binary"
+
+  if [ ! -f "$binary_path" -a -d "${binary_path}.app" ]; then
+    # Hanle MacOS application bundle.
+    mv "${binary_path}.app" "$install_path/bin/${binary}.app"
+    ( cd "$install_path/bin" && ln -s "$binary" "${binary}.app/Contents/MacOS/$binary" )
+  else
+    mv "$binary_path" "$install_path/bin/$binary"
+  fi
+}
+
 install_version() {
   local install_type="$1"
   local version="$2"
@@ -115,11 +130,11 @@ install_version() {
     mkdir -p "$install_path"
     cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
     mkdir -p "$install_path"/bin
-    mv "$install_path"/tsh "$install_path"/bin/tsh
-    mv "$install_path"/tctl "$install_path"/bin/tctl
-    mv "$install_path"/teleport "$install_path"/bin/teleport
+    install_client_binary "$install_path" tsh
+    install_client_binary "$install_path" tctl
+    install_client_binary "$install_path" teleport
     # Machine ID is available starting from the Teleport 9.0.0 release. So tbot not exist in previous releases
-    [[ -f "$install_path"/tbot ]] && mv "$install_path"/tbot "$install_path"/bin/tbot
+    [[ -f "$install_path"/tbot ]] && install_client_binary "$install_path" tbot
 
     # TODO: Asert teleport-ent executable exists.
     local tool_cmd
