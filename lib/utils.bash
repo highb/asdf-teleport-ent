@@ -111,7 +111,7 @@ install_client_binary() {
   if [ ! -f "$binary_path" -a -d "${binary_path}.app" ]; then
     # Hanle MacOS application bundle.
     mv "${binary_path}.app" "$install_path/bin/${binary}.app"
-    ( cd "$install_path/bin" && ln -s "${binary}.app/Contents/MacOS/$binary" "$binary" )
+    (cd "$install_path/bin" && ln -s "${binary}.app/Contents/MacOS/$binary" "$binary")
   else
     mv "$binary_path" "$install_path/bin/$binary"
   fi
