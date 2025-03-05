@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.4](https://github.com/highb/asdf-teleport-ent/compare/v1.0.3...v1.0.4) (2025-03-05)
+
+
+### Bug Fixes
+
+* Lint errors. ([b897fcf](https://github.com/highb/asdf-teleport-ent/commit/b897fcff61d3ec521ce1c54afa512d4c40d6b7d6))
+* MacOS install for app bundles. ([1cb4b90](https://github.com/highb/asdf-teleport-ent/commit/1cb4b900bfaf48c55ddffdee71d7c93d96b8f738))
+
 ## [1.0.3](https://github.com/highb/asdf-teleport-ent/compare/v1.0.2...v1.0.3) (2025-02-05)
 
 
