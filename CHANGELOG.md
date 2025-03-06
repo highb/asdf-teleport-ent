@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.5](https://github.com/highb/asdf-teleport-ent/compare/v1.0.4...v1.0.5) (2025-03-06)
+
+
+### Bug Fixes
+
+* Linux/ARM64 install. ([96fe97f](https://github.com/highb/asdf-teleport-ent/commit/96fe97fc97e3642ef27262be6d22cabb8e22a411))
+* Linux/ARM64 install. ([33e39f6](https://github.com/highb/asdf-teleport-ent/commit/33e39f6675c251904b332218eeeb076cc98a7836))
+* Sends output of fail() to stderr. ([a2942ae](https://github.com/highb/asdf-teleport-ent/commit/a2942ae518e177cbe80230d4cac1f705723660bd))
+
 ## [1.0.4](https://github.com/highb/asdf-teleport-ent/compare/v1.0.3...v1.0.4) (2025-03-05)
 
 
