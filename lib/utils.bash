@@ -78,6 +78,8 @@ detect_arch() {
       echo "$ARCH"
     elif [ "${ARCH}" == "arm64" ]; then
       echo "$ARCH"
+    elif [ "${ARCH}" == "aarch64" ]; then
+      echo "arm64"
     elif [ "${ARCH}" == "i386" ]; then
       echo "$ARCH"
     elif [ "${ARCH}" == "armv7" ]; then
