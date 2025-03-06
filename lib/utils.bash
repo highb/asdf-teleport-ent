@@ -10,7 +10,7 @@ OS="${OS:-unknown}"
 ARCH="${ARCH:-unknown}"
 
 fail() {
-  echo -e "asdf-$TOOL_NAME: $*"
+  echo -e "asdf-$TOOL_NAME: $*" >/dev/stderr
   exit 1
 }
 
