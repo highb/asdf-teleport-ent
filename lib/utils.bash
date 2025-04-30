@@ -93,14 +93,20 @@ detect_arch() {
 }
 
 download_release() {
-  local version filename url
+  local version filename url fips
   version="$1"
   filename="$2"
+  fips_build="$3"
   os=$(detect_os)
   arch=$(detect_arch "$os")
-  url="$REPO/teleport-ent-v${version}-${os}-${arch}-bin.tar.gz"
 
-  echo "* Downloading $TOOL_NAME release $version..."
+  if [[ "$fips_build" == true ]]; then
+    url="$REPO/teleport-ent-v${version}-${os}-${arch}-fips-bin.tar.gz"
+  else
+    url="$REPO/teleport-ent-v${version}-${os}-${arch}-bin.tar.gz"
+  fi
+
+  echo "* Downloading $TOOL_NAME release $version (fips=$fips_build)..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 
