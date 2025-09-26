@@ -3,7 +3,7 @@
 set -euo pipefail
 
 GH_REPO="https://github.com/gravitational/teleport/"
-REPO="https://cdn.teleport.dev"
+REPO="https://get.gravitational.com"
 TOOL_NAME="teleport-ent"
 TOOL_TEST="tsh version"
 OS="${OS:-unknown}"
