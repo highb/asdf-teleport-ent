@@ -36,7 +36,7 @@ teleport-ent:
 
 ```shell
 # Show all installable versions
-asdf list-all teleport-ent
+asdf list all teleport-ent
 
 # Install latest version
 asdf install teleport-ent latest
@@ -45,14 +45,11 @@ asdf install teleport-ent latest
 asdf install teleport-ent 14.2.2
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global teleport-ent latest
+asdf set -u teleport-ent latest
 
 # Set a version locally for the current directory and all sub-directories
 # This will also create a .tool-versions file which can be checked in to source control.
-asdf local teleport-ent 14.2.2
-
-# Set a version for the current shell
-asdf shell teleport-ent 14.2.2
+asdf set teleport-ent 14.2.2
 
 # Now teleport-ent commands are available
 tsh version
