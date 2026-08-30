@@ -6,6 +6,7 @@
       "changelog-path": "CHANGELOG.md",
       "extra-files": ["version.txt"],
       "include-v-in-tag": true,
+      "pull-request-footer": "### Before merging\nRun `scripts/contributors.bash <previous-tag> HEAD` and add a `### Thanks` section to the changelog.",
       "changelog-sections": [
         {"type": "feat", "section": "Features", "hidden": false},
         {"type": "fix", "section": "Bug Fixes", "hidden": false},

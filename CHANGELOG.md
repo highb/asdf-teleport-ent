@@ -39,6 +39,10 @@
 
 * add .mise.toml, remove stale TODOs, consolidate renovate mise group ([486c1dd](https://github.com/highb/asdf-teleport-ent/commit/486c1dd))
 
+### Thanks
+
+* @drootsad, @notsag, @thampton
+
 ## [1.0.5](https://github.com/highb/asdf-teleport-ent/compare/v1.0.4...v1.0.5) (2025-03-06)
 
 
