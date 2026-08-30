@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.1.0](https://github.com/highb/asdf-teleport-ent/compare/v1.0.6...v1.1.0) (2026-08-30)
+
+
+### Features
+
+* filter version listing to supported majors (v17, v18) ([46256bc](https://github.com/highb/asdf-teleport-ent/commit/46256bc6a17eb820a79316c4d8b71ebe1e6f2a7b))
+
+
+### Bug Fixes
+
+* local fips_build variable in download_release ([fea15d8](https://github.com/highb/asdf-teleport-ent/commit/fea15d86326a6cd1e2b43826919a6fdc21b8622e))
+
+
+### Documentation
+
+* list all contributors by name in thanks section ([ebd60a4](https://github.com/highb/asdf-teleport-ent/commit/ebd60a4dc0c5bceb5b3318421abd0ddeaac7d373))
+* remove self from contributor thanks ([a6e0dea](https://github.com/highb/asdf-teleport-ent/commit/a6e0dea41ed7ec10550c3f9febbd50a1a4bfc0b5))
+
+
+### Build System
+
+* add contributor thanks to changelog and helper script ([7f41f75](https://github.com/highb/asdf-teleport-ent/commit/7f41f7537bc5bbb4ecacc8c9a227a5017eb7fc5f))
+* add mise tasks for lint and contributors ([7587580](https://github.com/highb/asdf-teleport-ent/commit/7587580eff3b26ca2a233158be3ddd5494623125))
+* fix release-please config and regenerate changelog ([4f91a80](https://github.com/highb/asdf-teleport-ent/commit/4f91a8043760c9097bad54e1e3faf5283599bc62))
+
+
+### Miscellaneous Chores
+
+* add .mise.toml, remove stale TODOs, consolidate renovate mise group ([486c1dd](https://github.com/highb/asdf-teleport-ent/commit/486c1dda8e9273c8adbba0e751ae41a07622d664))
+
 ## [1.0.6](https://github.com/highb/asdf-teleport-ent/compare/v1.0.5...v1.0.6) (2026-08-30)
 
 
