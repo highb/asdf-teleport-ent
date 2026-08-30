@@ -12,7 +12,8 @@
     },
     {
       "matchFileNames": [
-        ".mise.toml"
+        ".mise.toml",
+        ".tool-versions"
       ],
       "groupName": "mise tools"
     }

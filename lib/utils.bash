@@ -64,7 +64,6 @@ detect_os() {
 }
 
 detect_arch() {
-  # TODO Figure out arm, arm64, i386, etc
   if [ "$ARCH" = "unknown" ]; then
     ARCH="$(uname -m)"
     if [ $? != 0 ]; then
@@ -138,7 +137,6 @@ install_version() {
     # Machine ID is available starting from the Teleport 9.0.0 release. So tbot not exist in previous releases
     [[ -f "$install_path"/tbot ]] && install_client_binary "$install_path" tbot
 
-    # TODO: Asert teleport-ent executable exists.
     local tool_cmd
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
     test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
