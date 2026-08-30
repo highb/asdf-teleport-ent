@@ -93,7 +93,7 @@ detect_arch() {
 }
 
 download_release() {
-  local version filename url fips
+  local version filename url fips_build
   version="$1"
   filename="$2"
   fips_build="$3"
