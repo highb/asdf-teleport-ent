@@ -3,18 +3,41 @@
 ## [1.0.6](https://github.com/highb/asdf-teleport-ent/compare/v1.0.5...v1.0.6) (2026-08-30)
 
 
-### Bug Fixes
+### Features
 
-* Update download URL and add mise support ([8229705](https://github.com/highb/asdf-teleport-ent/commit/82297055d5909561c85109a4488700e89f39af78))
-* Update download URL and add mise support ([7099dfd](https://github.com/highb/asdf-teleport-ent/commit/7099dfd2a0f2166e2da26f2c4f43837627c72678))
-
-## [1.0.6](https://github.com/highb/asdf-teleport-ent/compare/v1.0.5...v1.0.6) (2026-08-30)
+* Allow -fips versions of teleport-ent CLI ([ad34d04](https://github.com/highb/asdf-teleport-ent/commit/ad34d04))
+* Filter version listing to supported majors (v17, v18) ([46256bc](https://github.com/highb/asdf-teleport-ent/commit/46256bc))
 
 
 ### Bug Fixes
 
-* Update download URL and add mise support ([8229705](https://github.com/highb/asdf-teleport-ent/commit/82297055d5909561c85109a4488700e89f39af78))
-* Update download URL and add mise support ([7099dfd](https://github.com/highb/asdf-teleport-ent/commit/7099dfd2a0f2166e2da26f2c4f43837627c72678))
+* Update download URL and add mise support ([7099dfd](https://github.com/highb/asdf-teleport-ent/commit/7099dfd))
+* local fips_build variable in download_release ([fea15d8](https://github.com/highb/asdf-teleport-ent/commit/fea15d8))
+
+
+### Documentation
+
+* update the README with the new asdf 0.16 commands ([c310e9a](https://github.com/highb/asdf-teleport-ent/commit/c310e9a))
+
+
+### Dependencies
+
+* update dependency shfmt to v3.12.0 ([af4e74e](https://github.com/highb/asdf-teleport-ent/commit/af4e74e))
+* update actions/checkout action to v5 ([4242e49](https://github.com/highb/asdf-teleport-ent/commit/4242e49))
+* update dependency shellcheck to v0.11.0 ([f156fc4](https://github.com/highb/asdf-teleport-ent/commit/f156fc4))
+* update actions/checkout action to v6 ([39c978a](https://github.com/highb/asdf-teleport-ent/commit/39c978a))
+* update dependency shfmt to v3.14.0 ([25da8b2](https://github.com/highb/asdf-teleport-ent/commit/25da8b2))
+* update github-actions ([f04d3ae](https://github.com/highb/asdf-teleport-ent/commit/f04d3ae))
+
+
+### Build System
+
+* group renovate PRs by file to reduce noise ([e4977ad](https://github.com/highb/asdf-teleport-ent/commit/e4977ad))
+
+
+### Miscellaneous Chores
+
+* add .mise.toml, remove stale TODOs, consolidate renovate mise group ([486c1dd](https://github.com/highb/asdf-teleport-ent/commit/486c1dd))
 
 ## [1.0.5](https://github.com/highb/asdf-teleport-ent/compare/v1.0.4...v1.0.5) (2025-03-06)
 
