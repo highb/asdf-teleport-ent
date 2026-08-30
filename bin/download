@@ -15,8 +15,8 @@ release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME-$ASDF_INSTALL_VERSION.tar.gz"
 
 fips_build=false
 if [[ "$ASDF_INSTALL_VERSION" == *-fips ]]; then
-    ASDF_INSTALL_VERSION="${ASDF_INSTALL_VERSION%-fips}"
-    fips_build=true
+  ASDF_INSTALL_VERSION="${ASDF_INSTALL_VERSION%-fips}"
+  fips_build=true
 fi
 
 # Download tar.gz file to the download directory
