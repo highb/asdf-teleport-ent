@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.6](https://github.com/highb/asdf-teleport-ent/compare/v1.0.5...v1.0.6) (2026-08-30)
+
+
+### Bug Fixes
+
+* Update download URL and add mise support ([8229705](https://github.com/highb/asdf-teleport-ent/commit/82297055d5909561c85109a4488700e89f39af78))
+* Update download URL and add mise support ([7099dfd](https://github.com/highb/asdf-teleport-ent/commit/7099dfd2a0f2166e2da26f2c4f43837627c72678))
+
 ## [1.0.5](https://github.com/highb/asdf-teleport-ent/compare/v1.0.4...v1.0.5) (2025-03-06)
 
 
