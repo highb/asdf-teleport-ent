@@ -5,6 +5,7 @@
 
 ### Features
 
+* Allow -fips versions of teleport-ent CLI ([ad34d04](https://github.com/highb/asdf-teleport-ent/commit/ad34d048ada418a7bac9bbfb4f4eee0e58833a4d))
 * filter version listing to supported majors (v17, v18) ([46256bc](https://github.com/highb/asdf-teleport-ent/commit/46256bc6a17eb820a79316c4d8b71ebe1e6f2a7b))
 
 
@@ -33,16 +34,9 @@
 ## [1.0.6](https://github.com/highb/asdf-teleport-ent/compare/v1.0.5...v1.0.6) (2026-08-30)
 
 
-### Features
-
-* Allow -fips versions of teleport-ent CLI ([ad34d04](https://github.com/highb/asdf-teleport-ent/commit/ad34d04))
-* Filter version listing to supported majors (v17, v18) ([46256bc](https://github.com/highb/asdf-teleport-ent/commit/46256bc))
-
-
 ### Bug Fixes
 
 * Update download URL and add mise support ([7099dfd](https://github.com/highb/asdf-teleport-ent/commit/7099dfd))
-* local fips_build variable in download_release ([fea15d8](https://github.com/highb/asdf-teleport-ent/commit/fea15d8))
 
 
 ### Documentation
@@ -63,11 +57,6 @@
 ### Build System
 
 * group renovate PRs by file to reduce noise ([e4977ad](https://github.com/highb/asdf-teleport-ent/commit/e4977ad))
-
-
-### Miscellaneous Chores
-
-* add .mise.toml, remove stale TODOs, consolidate renovate mise group ([486c1dd](https://github.com/highb/asdf-teleport-ent/commit/486c1dd))
 
 ### Thanks
 
