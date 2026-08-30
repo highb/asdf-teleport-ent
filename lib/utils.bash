@@ -27,14 +27,26 @@ sort_versions() {
 
 list_github_tags() {
   git ls-remote --tags --refs "$GH_REPO" |
-    grep -oE 'refs/tags/v[0-9]+.[0-9]+.[0-9]+$' |
-    cut -d/ -f3- |
-    sed 's/^v//' |
-    sort -V
+    grep -E 'refs/tags/v[0-9]+\.[0-9]+\.[0-9]+$' |
+    sed 's|.*refs/tags/v||' |
+    sort -t. -k1,1n -k2,2n -k3,3n
 }
 
+# Teleport supports the two most recent major versions.
+# Update this when a new major is released or an old one goes EOL.
+# Reference: https://endoflife.date/teleport
+SUPPORTED_MAJOR_VERSIONS="17 18"
+
 list_all_versions() {
-  list_github_tags
+  local major rest
+  list_github_tags | while IFS=. read -r major rest; do
+    for supported in $SUPPORTED_MAJOR_VERSIONS; do
+      if [ "$major" = "$supported" ]; then
+        echo "$major.$rest"
+        break
+      fi
+    done
+  done
 }
 
 detect_os() {
