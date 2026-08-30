@@ -18,7 +18,7 @@
 # Dependencies
 
 - `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
+- `git`: used to fetch the list of installable versions from the upstream repository.
 
 # Install
 
@@ -42,14 +42,14 @@ asdf list all teleport-ent
 asdf install teleport-ent latest
 
 # Install specific version
-asdf install teleport-ent 14.2.2
+asdf install teleport-ent 18.10.0
 
 # Set a version globally (on your ~/.tool-versions file)
 asdf set -u teleport-ent latest
 
 # Set a version locally for the current directory and all sub-directories
 # This will also create a .tool-versions file which can be checked in to source control.
-asdf set teleport-ent 14.2.2
+asdf set teleport-ent 18.10.0
 
 # Now teleport-ent commands are available
 tsh version
@@ -77,17 +77,17 @@ mise ls-remote teleport-ent
 mise install teleport-ent@latest
 
 # Install specific version
-mise install teleport-ent@14.2.2
+mise install teleport-ent@18.10.0
 
 # Set a version globally (on your ~/.tool-versions file)
 mise global teleport-ent@latest
 
 # Set a version locally for the current directory and all sub-directories
 # This will also create a .tool-versions file which can be checked in to source control.
-mise local teleport-ent@14.2.2
+mise local teleport-ent@18.10.0
 
 # Set a version for the current shell
-mise shell teleport-ent@14.2.2
+mise shell teleport-ent@18.10.0
 
 # Now teleport-ent commands are available
 tsh version

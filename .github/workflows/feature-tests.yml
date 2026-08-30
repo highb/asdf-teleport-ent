@@ -1,0 +1,63 @@
+name: Feature Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  version-filter:
+    name: list-all returns only supported majors
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Run version filter test
+        run: bash scripts/test-version-filter.bash
+
+  mise-install:
+    name: mise install (standard build)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup mise
+        uses: jdx/mise-action@v4
+        with:
+          install: false
+
+      # Pin a version known to have a standard and -fips Enterprise build.
+      # Bump when SUPPORTED_MAJOR_VERSIONS changes.
+      - name: Install and verify
+        run: |
+          set -euo pipefail
+          mise plugins install teleport-ent "file://$GITHUB_WORKSPACE"
+          mise install teleport-ent@18.10.0
+          mise x teleport-ent@18.10.0 -- tsh version | grep -q 'Teleport v18.10.0'
+
+  fips-install:
+    name: FIPS build install
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup mise
+        uses: jdx/mise-action@v4
+        with:
+          install: false
+
+      - name: Install and verify FIPS build
+        run: |
+          set -euo pipefail
+          mise plugins install teleport-ent "file://$GITHUB_WORKSPACE"
+          mise install teleport-ent@18.10.0-fips
+          mise x teleport-ent@18.10.0-fips -- tsh version | grep -q 'boringcrypto'
