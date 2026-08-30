@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.1](https://github.com/highb/asdf-teleport-ent/compare/v1.1.0...v1.1.1) (2026-08-30)
+
+
+### Documentation
+
+* fix changelog attribution for post-v1.0.6 commits ([a7cb263](https://github.com/highb/asdf-teleport-ent/commit/a7cb2639d5b31fc2fe1083387cb512941f063253))
+* update README dependencies and install examples ([7c986db](https://github.com/highb/asdf-teleport-ent/commit/7c986dbfef9156e0cef13a0d0c15c98372e0161a))
+
+
+### Miscellaneous Chores
+
+* remove stale TODO from bin/download ([232fa21](https://github.com/highb/asdf-teleport-ent/commit/232fa21024c40a0b128c8e4633db96e724e3cd7c))
+
 ## [1.1.0](https://github.com/highb/asdf-teleport-ent/compare/v1.0.6...v1.1.0) (2026-08-30)
 
 
