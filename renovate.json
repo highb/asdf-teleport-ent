@@ -1,6 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "matchFileNames": [
+        ".github/workflows/**"
+      ],
+      "groupName": "github-actions"
+    },
+    {
+      "matchFileNames": [
+        ".mise.toml"
+      ],
+      "groupName": "mise tools"
+    }
   ]
 }
