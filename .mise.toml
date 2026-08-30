@@ -1,3 +1,19 @@
 [tools]
 shellcheck = "0.11.0"
 shfmt = "3.14.0"
+
+[tasks."lint:shellcheck"]
+description = "Run ShellCheck on all scripts"
+run = "shellcheck -s bash -x bin/* -P lib/"
+
+[tasks."lint:shfmt"]
+description = "Check formatting with shfmt"
+run = "shfmt -d ."
+
+[tasks.lint]
+depends = ["lint:shellcheck", "lint:shfmt"]
+description = "Run all lint checks"
+
+[tasks.contributors]
+description = "List contributors since a tag (default: all-time)"
+run = "bash scripts/contributors.bash $@"
