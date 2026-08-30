@@ -111,7 +111,7 @@ some functionality added.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-Thanks to all contributors: [@highb](https://github.com/highb), [@vladlosev](https://github.com/vladlosev), [@notsag](https://github.com/notsag), [@aweris](https://github.com/aweris), [@NitriKx](https://github.com/NitriKx), [@drootsad](https://github.com/drootsad), [@gtback](https://github.com/gtback), [@gunzy83](https://github.com/gunzy83), and [@thampton](https://github.com/thampton).
+Thanks to all contributors: [@vladlosev](https://github.com/vladlosev), [@notsag](https://github.com/notsag), [@aweris](https://github.com/aweris), [@NitriKx](https://github.com/NitriKx), [@drootsad](https://github.com/drootsad), [@gtback](https://github.com/gtback), [@gunzy83](https://github.com/gunzy83), and [@thampton](https://github.com/thampton).
 
 # License
 
