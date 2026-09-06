@@ -1,6 +1,6 @@
 [tools]
 shellcheck = "0.11.0"
-shfmt = "3.14.0"
+shfmt = "3.14.1"
 
 [tasks."lint:shellcheck"]
 description = "Run ShellCheck on all scripts"
